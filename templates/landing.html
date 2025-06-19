@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduConnect - Smart AI Advisor</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #224abe;
+            --accent-color: #f8f9fc;
+            --text-color: #5a5c69;
+        }
+        
+        body {
+            font-family: 'Nunito', 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--text-color);
+        }
+        
+        .landing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero-section {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero-content {
+            padding: 4rem 2rem;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #6c757d;
+        }
+        
+        .hero-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #6c757d;
+        }
+        
+        .get-started-btn {
+            padding: 0.75rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .get-started-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            height: 100%;
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-text {
+            color: #6c757d;
+        }
+        
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .hero-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 991.98px) {
+            .hero-content {
+                padding: 3rem 1.5rem;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .hero-image-container {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container landing-container">
+        <div class="row hero-section">
+            <div class="col-lg-6 hero-content">
+                <h1 class="hero-title">EduConnect</h1>
+                <h2 class="hero-subtitle">Smart AI Academic Advisor</h2>
+                <p class="hero-text">
+                    Connect with expert advisors or get instant AI assistance for all your academic needs.
+                    EduConnect bridges the gap between students and advisors with cutting-edge technology.
+                </p>
+                <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg get-started-btn">
+                    <i class="fas fa-rocket me-2"></i>Get Started
+                </a>
+            </div>
+            <div class="col-lg-6 hero-image-container">
+                <img src="{{ url_for('static', filename='images/education.svg') }}" alt="EduConnect" class="hero-image" onerror="this.src='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/icons/mortarboard-fill.svg'; this.style.width='200px';">
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">AI Assistance</h3>
+                    <p class="feature-text">
+                        Get instant answers to your academic questions with our advanced AI advisor.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="feature-title">Human Advisors</h3>
+                    <p class="feature-text">
+                        Connect directly with experienced academic advisors for personalized guidance.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="feature-title">Student Success</h3>
+                    <p class="feature-text">
+                        Achieve your academic goals with comprehensive support and resources.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
